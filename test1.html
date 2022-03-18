@@ -4,72 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clinica de Fracturas Palmira</title>
-  <style>
-      
-      /* Este style bloquea la visualizacion  de las listas ul descendientes de nav */
-      nav ul ul {
-        display: none;
-      }
-      /* Este  Style despliega las opciones cuando se paran el cursor sobre un elemento de nav*/
-      /* Solo aplica para los elementos descendientes los lu que son hijos directos de li:hover que descienden de nav y li */
-      nav ul li:hover > ul {
-        display: block;
-      }
-      nav ul:after {
-        content: "";
-        clear: both;
-        display: block;
-      }
-
-      /*Organiza todos los elementos descendientes de nav de maneja horizontal*/
-      nav ul li {
-        float: left;
-        position: relative;
-        list-style-type: none;
-      }
-      nav ul li:hover {
-        background: rgba(3, 71, 20, 0.67);
-      }
-      /* Poner de color blanco las etiquetas <a> hijas de ul y li que esten tengan el cursor encima*/
-      nav ul li:hover a {
-        color: #fff;
-      }
-
-      /*Genera las cajas y los colores de las mismas de los elementos de la barra de*/
-      nav ul li a {
-        display: block;
-        padding: 20px 30px;
-        color: #ffffff;
-        text-decoration: none;
-        background-color: rgba(35, 17, 134, 0.8);
-        font-family: sans-serif;
-      }
-      /*Organiza el orden de las cajas de los elementos desplegables al visualizarse*/
-      nav ul ul {
-        background: rgba(35, 17, 134, 0.8);;
-        padding: 0;
-        position: absolute;
-        top: 100%;
-      }
-
-      /*Organiza la distribucion de los elementos de la lista desplegable*/
-      nav ul ul li {
-        float: none;
-        position: relative;
-      }
-
-      nav ul ul li a {
-        padding: 15px 10px;
-        color: #ffffff;
-        text-transform: uppercase;
-      }
-
-      /*Cambia de color el fondo de las cajas de los elementos pertenecientes a listas desplegables al poner el cursor*/
-      nav ul ul li a:hover {
-        background: rgba(69, 55, 201, 0.67);
-      }
-  </style>
+  <link rel="stylesheet" href="styles.css"> <!-- Agregar hoja de estilos-->
+  <title>Clinica de Fracturas Palmira</title>  
 </head>
 <body>
 <h1>BIENVENIDO a la clinica de Fracturas</h1>

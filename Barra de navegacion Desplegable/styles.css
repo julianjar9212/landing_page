@@ -1,0 +1,121 @@
+      /*Valores por defecto de las cajas de html*/
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }  
+
+      /*Se crea un contenedor grid (.container --> div) en el cual se ubican desde html la imagen logo y la barra de navegacion dentro de el */
+      .container {
+        display: grid;
+        grid-template-columns: 390px 1400px; /*Conf de tamaño de columna en px*/
+        grid-template-rows: 40px 1fr;             /*Conf de tamaño de columna en fr*/
+        position: fixed;
+      }
+      
+      /*Se configura el estilo del titulo y se ubica en la ubicacion 1/2 1/2 del grid*/
+      .container #titulo {
+        padding-top:5px;
+        font-family: Arial;
+        color: white;
+        background: #16763c;
+        font-size: 130%;
+        text-align: center;
+        grid-column: 1/2 ;
+        grid-row: 1/2;
+        
+      }
+      
+      /*Se configura el estilo del titulo y se ubica en la ubicacion 2/2 1/1 del grid*/
+      .container .call {
+        font-family: Arial;
+        font-size: medium;
+        text-align: center;
+        padding-top:10px;
+        vertical-align: text-top;
+        grid-column: 2/2;
+        grid-row: 1/2;
+        color: white;
+        background: #16763c;
+        position: relative; /*Posicion absoluta dentro del grid asignado*/
+               /*Desplazamiento desde la derecha en 580px */
+      
+      }
+
+      /*Ubicacion imagen en la grilla - columna 1 fila 2*/
+      .container .logo {
+        grid-row: 2/2;
+        position: relative;
+      }
+
+      /*Ubicacion y configutaicion de la barra de navegacion en la grilla - columna 2 fila 2*/
+      .container .nav-container {
+        grid-row: 2/2;
+        color: white;
+        font-size: 14px;
+        position: relative;
+        padding: 40px 1px;
+        margin: 0px;
+      }
+      
+            /*!!!!!!!!!!! CONTENIDO BARA DE NAVEGACION !!!!!!!!!!*/
+      /* Este style bloquea la visualizacion  de las listas ul descendientes de nav */
+      .container .nav-container ul ul {
+        display: none;
+      }
+
+      
+      /*Organiza todos los elementos descendientes de nav de maneja horizontal*/
+      .container .nav-container ul>li {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        position: relative;
+      }
+
+        /*Genera las cajas y los colores de las mismas de los elementos de la barra de navegacion*/
+        .container .nav-container ul>li>a {
+          display: inline-block;
+          padding: 20px 20px;
+          color: #16763c;
+          text-decoration: none;
+          background-color: #ffffff;
+          font-family: Arial;
+        }
+
+        /*Animacion de subrayado inferior del bloque despues del contenido*/
+      .container .nav-container ul>li>a::after {
+          content: '';
+          display: block;            /*Creacion del bloque a animar*/
+          width: 0;                  /*ancho inicial del bloque a animar*/
+          height: 4px;               /*Altura del bloque a animar*/
+          /*Posicion y color del bloque a animar*/
+          position: relative;        
+          top: 20px;
+          background: #16763c;
+          transition: width .3s;
+        
+        }
+
+        /*Apliacion de la animacion luego de seleccionar el bloque*/
+      .container .nav-container ul>li>a:hover:after {
+          width: 100%;  /*largo final del bloque creado a animar*/
+      }
+      /*Se seleccionan los elementos de la lista de la barra de navegacion para que cambien de color
+      cuando el cursor se ponga sobre ellos*/
+      .container .nav-container ul>li>a:hover {
+        font-size: 18;
+        font-weight: 750;
+      }
+
+            /* Este  Style despliega las opciones cuando se paran el cursor sobre un elemento de nav*/
+      /* Solo aplica para los elementos descendientes los lu que son hijos directos de li:hover que descienden de nav y li */
+      .container .nav-container ul li:hover > ul {
+        display: block;              /*Muestra los bloques desplegables*/
+        position: absolute;          /*Ajusta la ubicacion los bloques desplegables*/
+        top: 60px;                   /*Ajusta el espacio desde el grid*/
+        
+      }
+
+      
+      
